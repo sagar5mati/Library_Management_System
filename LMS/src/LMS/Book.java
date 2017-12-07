@@ -1,6 +1,6 @@
 package LMS;
 
-import java.sql.Date;
+import java.util.Date;
 
 import LMS.GlobalEnum.BookStatus;
 import LMS.GlobalEnum.BookType;
