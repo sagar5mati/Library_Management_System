@@ -1,4 +1,4 @@
-DROP DATABASE library;
+DROP DATABASE IF EXISTS library;
 CREATE DATABASE library;
 
 CREATE TABLE member (
