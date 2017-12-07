@@ -1,8 +1,8 @@
-package LMS;
+package LMS;	
 
 public class Library {
 	public boolean addMember(String name, int mis, int age, String dept) {
-		
+	
 	}
     public boolean deleteMember(Person p) {
     	
