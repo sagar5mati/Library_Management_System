@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-12-08T02:35:45</date>
+  <millis>1512680745607</millis>
+  <sequence>0</sequence>
+  <logger>nikunj.MyLogger</logger>
+  <level>ALL</level>
+  <class>nikunj.Demo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>NO EXCEPTION</message>
+</record>
+<record>
+  <date>2017-12-08T02:35:45</date>
+  <millis>1512680745630</millis>
+  <sequence>1</sequence>
+  <logger>nikunj.MyLogger</logger>
+  <level>ALL</level>
+  <class>nikunj.Demo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>NICE!</message>
+</record>
+<record>
+  <date>2017-12-08T02:35:45</date>
+  <millis>1512680745631</millis>
+  <sequence>2</sequence>
+  <logger>nikunj.MyLogger</logger>
+  <level>ALL</level>
+  <class>nikunj.Demo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message> From New logger</message>
+  <exception>
+    <message>java.lang.ArrayIndexOutOfBoundsException: 4</message>
+    <frame>
+      <class>nikunj.Demo</class>
+      <method>main</method>
+      <line>15</line>
+    </frame>
+  </exception>
+</record>
+</log>
