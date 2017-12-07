@@ -5,9 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DatabaseConnector {
-	public static DatabaseConnector conn = null;
-	Connection db_connection;
-	java.sql.Statement stmt;
+	private static DatabaseConnector conn = null;
+	private Connection db_connection;
+	private java.sql.Statement stmt;
 	private DatabaseConnector(String url, String uname, String pass) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();

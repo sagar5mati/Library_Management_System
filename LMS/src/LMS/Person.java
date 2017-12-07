@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 
 public abstract class Person {
 	final String name;
-	final int age;
 	final int mis;
 	String dept;
 	int journalsIssued;
@@ -14,7 +13,6 @@ public abstract class Person {
 		this.mis = mis;
 		ResultSet rs = DatabaseConnector.getInstance().executeQuery(/*put a query here*/"");
 		this.name = rs.getString(arg0);
-		this.age = rs.getInt(arg0);
 		this.dept = rs.getString(arg0);
 		this.journalsIssued = rs.getInt(arg0);
 		this.techIssued = rs.getInt(arg0);
