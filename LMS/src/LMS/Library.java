@@ -1,6 +1,5 @@
 package LMS;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +29,7 @@ public class Library {
     }
     
     public void addBook(Book b) {
-    	if(DatabaseConnector.getInstance().execute(String.format(SqlQueries.add_book, b.name, b.author, b.type, b.status))) {
+    	if(DatabaseConnector.getInstance().execute(String.format(SqlQueries.add_book, b.name, b.author, b.type, BookStatus.AVAILABLE))) {
     		//log
     	}
     	else {
