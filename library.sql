@@ -26,5 +26,5 @@ CREATE TABLE IssuedBooks (
 	FOREIGN KEY (MIS) REFERENCES member(MIS) ON DELETE CASCADE,
 	FOREIGN KEY (BID) REFERENCES book(BID) ON DELETE CASCADE);
 
-insert into member values('111403050', 'Abhijeet', 'Computer', '21', 'ORDINARY', '0', '0');
+insert into member values('111403050', 'Abhijeet', 'Computer', 'ORDINARY', '0', '0');
 insert into book values(NULL, 'Book1', 'Abhijeet', 'TECHNICAL', 'AVAILABLE', curdate());

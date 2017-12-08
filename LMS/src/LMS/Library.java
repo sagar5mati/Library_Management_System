@@ -10,8 +10,17 @@ import LMS.GlobalEnum.MemberType;
 
 public class Library {
 	
-	public void addMember(Person p, MemberType type) {
-		if(DatabaseConnector.getInstance().execute(String.format(SqlQueries.add_member, p.mis, p.name, p.dept, p.age, type))) {
+	public Library() {
+		
+	}
+	public static void main(String args[]) {
+		Library l = new Library();
+//		l.addBook("Da Vinci Code", "Dan Brown", BookType.JOURNAL);
+		l.addMember(111403067, "Sagar", "Computer", MemberType.PRIVILEGED);
+	}
+	
+	public void addMember(int mis, String name, String dept, MemberType type) {
+		if(DatabaseConnector.getInstance().execute(String.format(SqlQueries.add_member, mis, name, dept, type))) {
 			//success//log
 		}
 		else {
@@ -28,8 +37,8 @@ public class Library {
     	}
     }
     
-    public void addBook(Book b) {
-    	if(DatabaseConnector.getInstance().execute(String.format(SqlQueries.add_book, b.name, b.author, b.type, BookStatus.AVAILABLE))) {
+    public void addBook(String name, String author, BookType type) {
+    	if(DatabaseConnector.getInstance().execute(String.format(SqlQueries.add_book, name, author, type, BookStatus.AVAILABLE, "0001-01-01"))) {
     		//log
     	}
     	else {
@@ -125,6 +134,10 @@ public class Library {
     	String date = new SimpleDateFormat("yyyy-mm-dd").format(new Date());
     	DatabaseConnector.getInstance().execute(String.format(SqlQueries.set_lostBook_date, date, b.id));
     	DatabaseConnector.getInstance().execute(String.format(SqlQueries.update_book_status, BookStatus.LOST, b.id));
+    	if(b.type == BookType.JOURNAL)
+			DatabaseConnector.getInstance().execute(String.format(SqlQueries.update_member_journalIssued, --p.journalsIssued, p.mis));
+		else if (b.type == BookType.TECHNICAL)
+			DatabaseConnector.getInstance().execute(String.format(SqlQueries.update_member_technicalIssued, --p.techIssued, p.mis));
     	b.status = BookStatus.LOST;
     }
     

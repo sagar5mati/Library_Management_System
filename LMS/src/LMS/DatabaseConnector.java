@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class DatabaseConnector {
 	private static DatabaseConnector conn = null;
 	private Connection db_connection;
@@ -28,7 +29,7 @@ public class DatabaseConnector {
 	}
 	public static DatabaseConnector getInstance() {
 		if(conn == null) {
-			conn = new DatabaseConnector("dbc:mysql://localhost:3306/Library", "root", "r%p4m");
+			conn = new DatabaseConnector("jdbc:mysql://localhost:3306/library", "root", "r%p4m");
 		}
 		return conn;
 	}
