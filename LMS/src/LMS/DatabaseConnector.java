@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 
 
 public class DatabaseConnector {
@@ -14,6 +15,7 @@ public class DatabaseConnector {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			db_connection = DriverManager.getConnection(url, uname, pass);
 			stmt = db_connection.createStatement();
+			
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,7 +46,8 @@ public class DatabaseConnector {
 	}
 	public boolean execute(String query) {
 		try {
-			return stmt.execute(query);
+			 stmt.execute(query);
+			 return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

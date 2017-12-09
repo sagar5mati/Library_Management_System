@@ -48,18 +48,27 @@ public class Book {
 			 	type = BookType.valueOf(rs.getString(4));
 			 	this.id = rs.getInt(1);
 			 	this.name = name;
-			 	this.author = author;
+			 	this.author = rs.getString(3);
 			 }
 			 else {
 				 //log
 			 }
 		 } catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	 }
-	// public Enum Season = new Enum() {
+	 public String toString() {
+		 String result = "";
+		 result += "BOOK{";
+		 result += "Id:" + id;
+		 result += ", name:" + name;
+		 result += ", author:" + author;
+		 result += ", nstatus:" + status;
+		 result += ", type:" + type;
+		 result += ", Last date of Issue:" + lastDateOfIssue;
+		 result += "}";
+		 return result;
+	 }
 }

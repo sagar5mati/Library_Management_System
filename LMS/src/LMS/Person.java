@@ -52,4 +52,16 @@ public class Person {
 	public void reportLostBook(Book b){
 		Library.handleLostRequest(this, b);
 	}
+	public String toString() {
+		String result = "";
+		result += "PERSON{";
+		result += "mis:" + mis;
+		result += ", name:" + name;
+		result += ", deppartment:" + dept;
+		result += ", Type of Member:" + type;
+		result += ", Number of Journals Issued:" + journalsIssued;
+		result += ", Number of technical Issued:" + techIssued;
+		result += "}";
+		return result;
+	}
 }
